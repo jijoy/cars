@@ -1,5 +1,6 @@
-package com.example.carmanager.entity;
+package com.example.carmanager.repository;
 
+import com.example.carmanager.entity.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

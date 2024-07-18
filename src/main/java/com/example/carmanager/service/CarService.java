@@ -1,12 +1,10 @@
 package com.example.carmanager.service;
 
 import com.example.carmanager.entity.Car;
-import com.example.carmanager.entity.CarRepository;
+import com.example.carmanager.repository.CarRepository;
 import com.example.carmanager.exception.CarsException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
