@@ -10,7 +10,7 @@ import java.util.Objects;
 @Entity
 public class Car {
     @Id
-            @GeneratedValue(strategy = GenerationType.IDENTITY)
+            @GeneratedValue(strategy = GenerationType.AUTO)
     Long carId;
     String modelName;
     int seating;

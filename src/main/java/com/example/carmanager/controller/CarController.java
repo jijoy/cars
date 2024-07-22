@@ -18,6 +18,7 @@ public class CarController {
     @GetMapping("/car")
     public List<Car> getAllCars() {
         List<Car> cars = this.carService.getAllCars();
+        System.out.println("cars.size()");
         System.out.println(cars.size());
         return cars;
     }

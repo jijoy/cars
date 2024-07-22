@@ -44,7 +44,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         final String authorizationHeader = request.getHeader("Authorization");
-        System.out.println("authorizationHeader");
+        System.out.printf("authorizationHeader %s",authorizationHeader);
         System.out.println(request.getServletPath());
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
             throw new ServletException("Invalid JWT token");
@@ -54,6 +54,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
             String jwt = authorizationHeader.substring(7);
 
             String userEmail = jwtService.extractUsername(jwt);
+            System.out.printf("userEmail %s%n",userEmail);
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             if( userEmail != null && authentication == null) {
                 UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
